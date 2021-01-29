@@ -26,7 +26,7 @@ export class UserRepository extends Repository<User> {
     user.spotifyId = spotifyId;
     user.email = email;
     user.name = name;
-    user.avatar = avatar;
+    user.avatar = avatar ? avatar : '';
 
     try {
       await user.save();
