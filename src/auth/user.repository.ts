@@ -24,14 +24,15 @@ export class UserRepository extends Repository<User> {
     user.accessToken = accessToken;
     user.refreshToken = refreshToken;
     user.spotifyId = spotifyId;
-    user.email = email;
-    user.name = name;
+    user.email = email ? email : '';
+    user.name = name ? name : '';
     user.avatar = avatar ? avatar : '';
 
     try {
       await user.save();
       return user.spotifyId;
     } catch (error) {
+      console.log(error);
       throw new InternalServerErrorException();
     }
   }
