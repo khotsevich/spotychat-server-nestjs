@@ -2,13 +2,8 @@
 
 ## Installation
 
-bash
-$ npm install
+`npm install`
 
 ## Running the app
 
-bash
-
-# run server
-
-$ npm run start
+`npm run start`
